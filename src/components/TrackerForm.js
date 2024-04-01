@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 export const TrackerForm = () => {
   const [value, setValue] = useState("");
@@ -8,6 +8,5 @@ export const TrackerForm = () => {
       <button type='submit' className='tracker-btn'>Add Habit</button>
     </form>
   )
-}
+};
 
-export default TrackerForm

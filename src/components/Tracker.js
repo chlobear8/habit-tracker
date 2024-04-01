@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-const Tracker = () => {
+export const Tracker = () => {
   return (
-    <div>T</div>
-  )
-}
+    <div>
 
-export default Tracker
+    </div>
+  )
+};
+

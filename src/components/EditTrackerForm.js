@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-const EditTrackerForm = () => {
+export const EditTrackerForm = () => {
   return (
-    <div>edittrackerform</div>
-  )
-}
+    <div>
 
-export default EditTrackerForm
+    </div>
+  )
+};
+
