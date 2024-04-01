@@ -1,9 +1,12 @@
 import React from 'react'
+import { TrackerForm } from './TrackerForm';
 
-const trackerwrapper = () => {
+const TrackerWrapper = () => {
   return (
-    <div>trackerwrapper</div>
+    <div className='TrackerWrapper'>
+      <TrackerForm />
+    </div>
   )
 }
 
-export default trackerwrapper
+export default TrackerWrapper

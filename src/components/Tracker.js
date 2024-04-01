@@ -1,9 +1,9 @@
 import React from 'react'
 
-const tracker = () => {
+const Tracker = () => {
   return (
-    <div>tracker</div>
+    <div>T</div>
   )
 }
 
-export default tracker
+export default Tracker
