@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-export const TrackerForm = () => {
+export const TrackerForm = ({addTracker}) => {
   const [value, setValue] = useState("");
-  
+
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(value);
+    addTracker(value);
   }
   return (
     <form className='TrackerForm' onSubmit={handleSubmit}>
