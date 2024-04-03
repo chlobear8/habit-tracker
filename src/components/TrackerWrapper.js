@@ -15,13 +15,20 @@ export const TrackerWrapper = () => {
   const toggleComplete = id => {
     setTrackers(trackers.map(tracker => tracker.id === id ? {...tracker,
     completed: !tracker.completed} : tracker))
-  }
+  };
+
+  const deleteTracker = id => {
+    setTrackers(trackers.filter(tracker => tracker.id !== id))
+  };
+  
   return (
     <div className='TrackerWrapper'>
       <h1>Track your habits!</h1>
       <TrackerForm addTracker={addTracker} />
       {trackers.map((tracker, index) => (
-        <Tracker task={tracker} key={index} toggleComplete={toggleComplete} />
+        <Tracker task={tracker} key={index} 
+        toggleComplete={toggleComplete}
+        deleteTracker={deleteTracker} />
       ))}
 
     </div>
