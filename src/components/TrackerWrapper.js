@@ -7,7 +7,8 @@ export const TrackerWrapper = () => {
   const [tracker, setTracker] = useState([]);
 
   const addTracker = tracker => {
-    setTracker([...tracker, {id: uuidv4(), task: tracker, completed: false, isEditing: false}])
+    setTracker([...tracker, {id: uuidv4(), task: tracker,
+    completed: false, isEditing: false}])
     console.log(tracker);
   };
 
