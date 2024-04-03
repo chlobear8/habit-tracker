@@ -5,18 +5,19 @@ import { Tracker } from './Tracker';
 uuidv4();
 
 export const TrackerWrapper = () => {
-  const [tracker, setTracker] = useState([]);
+  const [trackers, setTrackers] = useState([]);
 
   const addTracker = tracker => {
-    setTracker([...tracker, {id: uuidv4(), task: tracker,
+    setTrackers([...trackers, {id: uuidv4(), task: tracker,
     completed: false, isEditing: false}])
   };
 
   return (
     <div className='TrackerWrapper'>
+      <h1>Track your habits!</h1>
       <TrackerForm addTracker={addTracker} />
-      {tracker.map((tracker, index) => (
-        <Tracker tracker={tracker} key={index} />
+      {trackers.map((tracker, index) => (
+        <Tracker task={tracker} key={index} />
       ))}
 
     </div>
