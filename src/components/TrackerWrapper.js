@@ -10,13 +10,15 @@ export const TrackerWrapper = () => {
   const addTracker = tracker => {
     setTracker([...tracker, {id: uuidv4(), task: tracker,
     completed: false, isEditing: false}])
-    console.log(tracker);
   };
 
   return (
     <div className='TrackerWrapper'>
       <TrackerForm addTracker={addTracker} />
-      <Tracker />
+      {tracker.map((tracker, index) => (
+        <Tracker tracker={tracker} key={index} />
+      ))}
+
     </div>
   )
 };

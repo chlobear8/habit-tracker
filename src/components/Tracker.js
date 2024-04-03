@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-export const Tracker = () => {
+export const Tracker = ({tracker}) => {
   return (
     <div className='Tracker'>
-      <p>Track Your Habits</p>
+      <p>{tracker.tracker}</p>
       <div>
         <FontAwesomeIcon icon={faPenToSquare} />
         <FontAwesomeIcon icon={faTrash} />
