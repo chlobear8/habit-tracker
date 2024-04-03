@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TrackerForm } from './TrackerForm';
 import { v4 as uuidv4 } from 'uuid';
+import { Tracker } from './Tracker';
 uuidv4();
 
 export const TrackerWrapper = () => {
@@ -15,6 +16,7 @@ export const TrackerWrapper = () => {
   return (
     <div className='TrackerWrapper'>
       <TrackerForm addTracker={addTracker} />
+      <Tracker />
     </div>
   )
 };
