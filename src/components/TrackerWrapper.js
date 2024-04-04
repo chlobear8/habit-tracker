@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { TrackerForm } from './TrackerForm';
 import { v4 as uuidv4 } from 'uuid';
 import { Tracker } from './Tracker';
+import { EditTrackerForm } from './edittrackerform';
 uuidv4();
 
 export const TrackerWrapper = () => {
@@ -31,10 +32,15 @@ export const TrackerWrapper = () => {
       <h1>Track your habits!</h1>
       <TrackerForm addTracker={addTracker} />
       {trackers.map((tracker, index) => (
+        tracker.isEditing ? (
+          <EditTrackerForm />
+        ) : (
         <Tracker task={tracker} key={index} 
         toggleComplete={toggleComplete}
         deleteTracker={deleteTracker}
         editTracker={editTracker} />
+        )
+
       ))}
 
     </div>
