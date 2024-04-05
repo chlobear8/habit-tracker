@@ -3,10 +3,12 @@ import { TrackerForm } from './TrackerForm';
 import { v4 as uuidv4 } from 'uuid';
 import { Tracker } from './Tracker';
 import { EditTrackerForm } from './EditTrackerForm';
+import { ProgressBar } from './ProgressBar';
 uuidv4();
 
 export const TrackerWrapper = () => {
   const [trackers, setTrackers] = useState([]);
+  const [trackersProgress, setTrackerProgress] = useState([]);
 
   const addTracker = tracker => {
     setTrackers([...trackers, {id: uuidv4(), task: tracker,
@@ -16,6 +18,11 @@ export const TrackerWrapper = () => {
   const toggleComplete = id => {
     setTrackers(trackers.map(tracker => tracker.id === id ? {...tracker,
     completed: !tracker.completed} : tracker))
+  };
+
+  const toggleProgress = id => {
+    setTrackerProgress(trackersProgress.map(tracker => tracker.id === id ? {...tracker,
+    progress: !tracker.progress} : tracker))
   };
 
   const deleteTracker = id => {
@@ -42,6 +49,7 @@ export const TrackerWrapper = () => {
         ) : (
             <Tracker task={tracker} key={index} 
             toggleComplete={toggleComplete}
+            toggleProgress={toggleProgress}
             deleteTracker={deleteTracker}
             editTracker={editTracker} />
         )
