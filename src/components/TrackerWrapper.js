@@ -4,11 +4,13 @@ import { v4 as uuidv4 } from 'uuid';
 import { Tracker } from './Tracker';
 import { EditTrackerForm } from './EditTrackerForm';
 import { ProgressBar } from './ProgressBar';
+import { Route } from 'react-router-dom';
 uuidv4();
 
 export const TrackerWrapper = () => {
   const [trackers, setTrackers] = useState([]);
   const [trackersProgress, setTrackerProgress] = useState([]);
+  const [showProgressPage, setShowProgressPage] = useState(false);
 
   const addTracker = tracker => {
     setTrackers([...trackers, {id: uuidv4(), task: tracker,
@@ -39,6 +41,10 @@ export const TrackerWrapper = () => {
     task, isEditing: !tracker.isEditing} : tracker))
   };
 
+  const handleProgressPageClick = () => {
+    setShowProgressPage(true);
+  };
+
   return (
     <div className='TrackerWrapper'>
       <h1>Track your habits!</h1>
@@ -51,11 +57,14 @@ export const TrackerWrapper = () => {
             toggleComplete={toggleComplete}
             toggleProgress={toggleProgress}
             deleteTracker={deleteTracker}
-            editTracker={editTracker} />
+            editTracker={editTracker} 
+            onProgressPageClick={handleProgressPageClick} />
         )
 
       ))}
-
+      <Route path="/progress">
+        {showProgressPage && <ProgressBar />}
+      </Route>
     </div>
   )
 };
