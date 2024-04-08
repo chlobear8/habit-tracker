@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Tracker } from './Tracker';
 import { EditTrackerForm } from './EditTrackerForm';
 import { ProgressBar } from './ProgressBar';
-import { Route } from 'react-router-dom';
+//import { AppRoutes } from './AppRoutes';
 uuidv4();
 
 export const TrackerWrapper = () => {
@@ -62,9 +62,9 @@ export const TrackerWrapper = () => {
         )
 
       ))}
-      <Route path="/progress">
+      {/* <Route path="/progress">
         {showProgressPage && <ProgressBar />}
-      </Route>
+      </Route> */}
     </div>
   )
 };
