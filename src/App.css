@@ -74,6 +74,10 @@ h1 {
   margin-left: 0.75rem;
 }
 
+.fa-bars-progress {
+  margin-left: 0.75rem;
+}
+
 .incompleted {
   color: #fff;
   cursor: pointer;
