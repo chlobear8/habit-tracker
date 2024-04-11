@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Tracker } from './Tracker';
 import { EditTrackerForm } from './EditTrackerForm';
 import { ProgressBar } from './ProgressBar';
-//import { AppRoutes } from './AppRoutes';
+import { AppRoutes } from './AppRoutes';
 uuidv4();
 
 export const TrackerWrapper = () => {
@@ -41,10 +41,6 @@ export const TrackerWrapper = () => {
     task, isEditing: !tracker.isEditing} : tracker))
   };
 
-  const handleProgressPageClick = () => {
-    setShowProgressPage(true);
-  };
-
   return (
     <div className='TrackerWrapper'>
       <h1>Track your habits!</h1>
@@ -58,13 +54,11 @@ export const TrackerWrapper = () => {
             toggleProgress={toggleProgress}
             deleteTracker={deleteTracker}
             editTracker={editTracker} 
-            onProgressPageClick={handleProgressPageClick} />
+            />
         )
 
       ))}
-      {/* <Route path="/progress">
-        {showProgressPage && <ProgressBar />}
-      </Route> */}
+  
     </div>
   )
 };

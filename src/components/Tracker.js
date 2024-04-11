@@ -1,8 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBarsProgress, faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 export const Tracker = ({task, toggleComplete, toggleProgress, deleteTracker, editTracker}) => {
+  let navigate = useNavigate();
+
+
   return (
     <div className='Tracker'>
       <p onClick={() => toggleComplete(task.id)} 
@@ -14,7 +18,7 @@ export const Tracker = ({task, toggleComplete, toggleProgress, deleteTracker, ed
       <div>
         <FontAwesomeIcon icon={faPenToSquare} onClick={() => editTracker(task.id)} />
         <FontAwesomeIcon icon={faTrash} onClick={() => deleteTracker(task.id)} />
-        <FontAwesomeIcon icon={faBarsProgress} onClick={() => toggleProgress(task.id)} />
+        <FontAwesomeIcon icon={faBarsProgress} onClick={() => navigate(`progress/${task.id}`)} />
       </div>
     </div>
   )

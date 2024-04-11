@@ -7,7 +7,7 @@ export const AppRoutes = () => {
     <Router>
       <Routes>
         <Route path="/" element={<TrackerWrapper />} exact />
-        <Route path="/progress/" element={<ProgressBar />} />
+        <Route path="/progress/:id" element={<ProgressBar />} />
       </Routes>
     </Router>
   )

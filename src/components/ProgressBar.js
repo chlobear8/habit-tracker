@@ -1,16 +1,17 @@
 import React from 'react';
 
-export const ProgressBar = (progress) => {
+export const ProgressBar = ({progressValue}) => {  
+
   return (
-    <h1>you made it</h1>
-    // <div className='Progress'>
-      
-    //   <ProgressBar 
-    //     bgcolor="pink"
-    //     progress={progress}
-    //     height={30}
-    //   />
-    // </div>
+    <div className='Progress'>
+      <div
+        style={{
+          width: `${progressValue}%`,
+          bgcolor: "pink",
+          height: '30px',
+        }}
+      />
+    </div>
   )
 };
 
