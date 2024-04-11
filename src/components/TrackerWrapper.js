@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Tracker } from './Tracker';
 import { EditTrackerForm } from './EditTrackerForm';
 import { ProgressBar } from './ProgressBar';
-import { AppRoutes } from './AppRoutes';
+//import { AppRoutes } from './AppRoutes';
 uuidv4();
 
 export const TrackerWrapper = () => {
@@ -46,20 +46,23 @@ export const TrackerWrapper = () => {
       <h1>Track your habits!</h1>
       <TrackerForm addTracker={addTracker} />
       {trackers.map((tracker, index) => (
-        tracker.isEditing ? (
-          <EditTrackerForm editTracker={editTask} task={tracker}/>
+        <div key={index}>
+          <ProgressBar progress={trackersProgress.find(progress => progress.id === tracker.id)?.progress || 0} />
+          {tracker.isEditing ? (
+            <EditTrackerForm editTracker={editTask} task={tracker}/>
         ) : (
-            <Tracker task={tracker} key={index} 
+            <Tracker 
+            task={tracker} 
+            key={index} 
             toggleComplete={toggleComplete}
             toggleProgress={toggleProgress}
             deleteTracker={deleteTracker}
             editTracker={editTracker} 
             />
-        )
-
+          )}
+        </div>
       ))}
-  
     </div>
-  )
+  );
 };
 

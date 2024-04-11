@@ -1,17 +1,15 @@
 import React from 'react';
 
-export const ProgressBar = ({progressValue}) => {  
+export const ProgressBar = ({progress}) => {  
 
   return (
-    <div className='Progress'>
-      <div
+    <div className='w3-light-grey'>
+      <div className='w3-container w3-green w3-center'
         style={{
-          width: `${progressValue}%`,
-          bgcolor: "pink",
-          height: '30px',
-        }}
-      />
+          width: `${progress}%`}}>
+          {progress}%
+        </div>
     </div>
-  )
+  );
 };
 
